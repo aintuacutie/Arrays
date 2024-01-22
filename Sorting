@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+
+int main() {
+    int number;
+
+    do {
+        std::cout << "Enter the size of the array (maximum of 20): ";
+        std::cin >> number;
+    } while (number <= 0 || number >= 20);
+
+    int array[number];
+    for (int i = 0; i < number; ++i) {
+        std::cout << "Array element " << i + 1 << ": ";
+        std::cin >> array[i];
+    }
+
+
+    std::sort(array, array + number);
+
+    std::cout << "The sorted array is: ";
+    for (int i = 0; i < number; ++i) {
+        std::cout << array[i] << " ";
+    }
+
+    return 0;
+}
