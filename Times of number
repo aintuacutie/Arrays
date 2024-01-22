@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main() {
+    const int arraySize = 10;
+    int numbers[arraySize];
+
+    std::cout << "Enter 10 numbers: ";
+    for (int i = 0; i < arraySize; ++i) {
+        std::cin >> numbers[i];
+    }
+
+    int X;
+    std::cout << "Enter a number: ";
+    std::cin >> X;
+
+    int countX = 0;
+    for (int i = 0; i < arraySize; ++i) {
+        if (numbers[i] == X) {
+            countX++;
+        }
+    }
+
+    std::cout << "Times of number " << X << " present in the array: " << countX << std::endl;
+
+    std::cout << "Final array: ";
+    for (int i = 0; i < arraySize; ++i) {
+        std::cout << numbers[i] << " ";
+    }
+
+    return 0;
+}
