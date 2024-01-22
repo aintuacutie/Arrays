@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    cout << "Enter a string: ";
+    string inputString;
+    getline(cin, inputString);
+
+    int vowelCounts[5] = {0};
+
+    int whitespaceCount = 0;
+
+    for (char letters: inputString) {
+        char upperletters = toupper(letters);
+
+        switch (upperletters) {
+            case 'A':
+                vowelCounts[0]++;
+                break;
+            case 'E':
+                vowelCounts[1]++;
+                break;
+            case 'I':
+                vowelCounts[2]++;
+                break;
+            case 'O':
+                vowelCounts[3]++;
+                break;
+            case 'U':
+                vowelCounts[4]++;
+                break;
+            case ' ':
+                whitespaceCount++;
+                break;
+        }
+    }
+
+    cout << "Vowels:" << endl;
+    cout << "A\t" << vowelCounts[0] << endl;
+    cout << "E\t" << vowelCounts[1] << endl;
+    cout << "I\t" << vowelCounts[2] << endl;
+    cout << "O\t" << vowelCounts[3] << endl;
+    cout << "U\t" << vowelCounts[4] << endl;
+    cout << "Whitespaces - " << whitespaceCount << endl;
+
+    return 0;
+}
